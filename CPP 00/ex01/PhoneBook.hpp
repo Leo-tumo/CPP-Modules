@@ -6,4 +6,15 @@
 //                                                                        //
 // ********************************************************************** //
 
+#ifndef EX01_PHONEBOOK_HPP
+# define EX01_PHONEBOOK_HPP
 
+class PhoneBook
+{
+private:
+
+public:
+	
+};
+
+#endif
