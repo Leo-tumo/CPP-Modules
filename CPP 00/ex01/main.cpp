@@ -6,14 +6,43 @@
 //                                                                        //
 // ********************************************************************** //
 
-#include "Contact.hpp"
+#include "PhoneBook.hpp"
+
+void    crap(){
+    std::cout << GREEN "+------------------------------------------------------------+" << std::endl;
+    std::cout << " _      _          __    _       ____  __   ___   _      ____ " << std::endl;
+    std::cout << "| |\\/| \\ \\_/      / /\\  \\ \\    /| |_  ( (` / / \\ | |\\/| | |_  " << std::endl;
+    std::cout << "|_|  |  |_|      /_/--\\  \\_\\/\\/ |_|__ _)_) \\_\\_/ |_|  | |_|__ " << std::endl;
+    std::cout << " ___   _     ___   _      ____  ___   ___   ___   _           " << std::endl;
+    std::cout << "| |_) | |_| / / \\ | |\\ | | |_  | |_) / / \\ / / \\ | |_/        " << std::endl;
+    std::cout << "|_|   |_| | \\_\\_/ |_| \\| |_|__ |_|_) \\_\\_/ \\_\\_/ |_| \\        " << std::endl;
+     std::cout << "+-------------------------------------------------------------+" << std::endl;
+
+}
 
 int main(){
-    Contact instance;
+    PhoneBook   pb;
+    std::string cmd;
 
-	std::string xcho;
-    instance.setFirstName("Leo");
-    std::cout << instance.getFirstName() << std::endl;
-	std::cin >> xcho;
-	std::cout << xcho << "stacvec"<<std::endl;
+    crap();
+    for(;;){
+        std::cout << CYAN "Enter command> " << WHITE;
+        getline(std::cin, cmd);
+        if (cmd == "ADD")
+            pb.add();
+        else if (cmd == "SEARCH")
+			pb.search();
+        else if (cmd == "EXIT")
+		{
+			std::cout << MAGENTA << "GOOD BYE" << std::endl;
+			break;
+		}
+        else
+        {
+            std::cout << RED "COMMAND NOT FOUND!" << std::endl;
+        }
+        if(std::cin.eof()){
+            break ;
+        }
+    }
 }

@@ -1,21 +1,21 @@
 .PHONY: all clean bonus fclean re
-SRCS	=	megaphone.cpp
 CC		=	c++
 FLAG	=	-std=c++98 -Wall -Wextra -Werror
-NAME = megaphone
-SRC = megaphone.cpp
-OPTIONOBJ = -o
-DEL = rm -rf
+NAME 	=	awesome
+SRC 	=	main.cpp PhoneBook.cpp Contact.cpp
+HEADER	=	PhoneBook.hpp Contact.hpp
+OPT		=	-o
+DEL		=	rm -rf
 
 all: $(NAME)
 
 $(NAME): $(HEADER) $(SRC)
-	@$(CC) $(FLAG) $(SRC) $(OPTIONOBJ) $(NAME)
+	@$(CC) $(FLAG) $(SRC) $(OPT) $(NAME)
 	@tput setaf 2 && printf "$(NAME) created.\n"
 	@tput setaf 255
 
 %.o: %.c $(HEADER)
-	$(CC) $(FLAG) $< $(OPTIONOBJ) $@
+	$(CC) $(FLAG) $< $(OPT) $@
 
 clean:
 	@$(DEL) $(NAME)
