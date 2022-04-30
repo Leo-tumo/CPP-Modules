@@ -16,7 +16,7 @@ int main(int argc, char **argv) {
     {
         for(int j = 0; argv[i][j] != '\0'; ++j)
         {
-            if(argv[i][j] <= 'z' && argv[i][j] >= 'a') {
+            if (argv[i][j] <= 'z' && argv[i][j] >= 'a') {
                 argv[i][j] &= ~(1 << 5);
                 std::cout << argv[i][j];
             }

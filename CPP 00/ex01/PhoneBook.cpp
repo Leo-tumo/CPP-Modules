@@ -11,54 +11,35 @@
 PhoneBook::PhoneBook(){
     _current = 0;
     _index = 0;
-};
+}
  
 PhoneBook::~PhoneBook(){};
+
+void	emptyChecker(std::string &temp, std::string display, bool flag){
+	if (flag)
+		temp.erase();
+	std::cout << CYAN << display << WHITE;
+	do{
+		getline(std::cin, temp);
+		if(temp.empty())
+			std::cout << RED "Don't leave me empty🥺 " WHITE;}
+	while(temp.empty());
+}
 
 void   PhoneBook::add(){
 	Contact tmp;
     std::string temp;
 
-	std::cout << CYAN << "First Name: " << WHITE;
-	while(temp.empty()){
-		getline(std::cin, temp);
-		if(temp.empty())
-			std::cout << RED "Please don't leave field empty-> " WHITE;
-	}
+	emptyChecker(temp, "First Name: ", false);
 	tmp.setFirstName(temp);
-	temp.erase();
-	std::cout << CYAN << "Last Name: " << WHITE;
-	while(temp.empty()){
-		getline(std::cin, temp);
-		if(temp.empty())
-			std::cout << RED "Please don't leave field empty-> " WHITE;
-	}
+	emptyChecker(temp, "Last Name: ", true);
 	tmp.setLastName(temp);
-	temp.erase();
-	std::cout << CYAN << "Nickname: " << WHITE;
-	while(temp.empty()){
-		getline(std::cin, temp);
-		if(temp.empty())
-			std::cout << RED "Please don't leave field empty-> " WHITE;
-	}
+	emptyChecker(temp, "Nickname: ", true);
 	tmp.setNickname(temp);
-	temp.erase();
-	std::cout << CYAN << "Phone number: " << WHITE;
-	while(temp.empty()){
-		getline(std::cin, temp);
-		if(temp.empty())
-			std::cout << RED "Please don't leave field empty-> " WHITE;
-	}
+	emptyChecker(temp, "Phone number: ", true);
 	tmp.setPhoneNumber(temp);
-	temp.erase();
-	std::cout << CYAN << "Darkest Secret: " << WHITE;
-	while(temp.empty()){
-		getline(std::cin, temp);
-		if(temp.empty())
-			std::cout << RED "Please don't leave field empty-> " WHITE;
-	}
+	emptyChecker(temp, "Darkest Secret: ", true);
  	tmp.setDarkestSecret(temp);
-	temp.erase();
 	this->_contacts[_current % 8] = tmp;
 	this->_current++;
 	if (this->_current <= 8)
