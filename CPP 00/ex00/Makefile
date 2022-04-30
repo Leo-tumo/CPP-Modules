@@ -1,5 +1,4 @@
 .PHONY: all clean bonus fclean re
-SRCS	=	megaphone.cpp
 CC		=	c++
 FLAG	=	-std=c++98 -Wall -Wextra -Werror
 NAME = megaphone
