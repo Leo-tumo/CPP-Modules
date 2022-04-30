@@ -11,6 +11,9 @@
 int main(){
     Contact instance;
 
+	std::string xcho;
     instance.setFirstName("Leo");
     std::cout << instance.getFirstName() << std::endl;
+	std::cin >> xcho;
+	std::cout << xcho << "stacvec"<<std::endl;
 }
