@@ -8,26 +8,17 @@
 
 #include "Karen.hpp"
 
-int main(int ac, char **av)
+int main()
 {
-    {
-        Karen karen;
-        if (ac != 1)
-            karen.complain(av[1]);
-        else
-            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-    }
-    {
-        Karen karen = Karen();
-        void	(Karen::*test_ptr)( std::string str );
+    Karen karen = Karen();
+    void	(Karen::*test_ptr)( std::string str );
 
-        karen.complain("debug");
-        karen.complain("DEBUG");
-        karen.complain("INFO");
-        karen.complain("WARNING");
-        karen.complain("ERROR");
-        test_ptr = &Karen::complain;
-        (karen.*test_ptr)("DEBUG");
-        (karen.*test_ptr)("what");
-    }
+    karen.complain("debug");
+    karen.complain("DEBUG");
+    karen.complain("INFO");
+    karen.complain("WARNING");
+    karen.complain("ERROR");
+    test_ptr = &Karen::complain;
+    (karen.*test_ptr)("DEBUG");
+    (karen.*test_ptr)("what");
 }
