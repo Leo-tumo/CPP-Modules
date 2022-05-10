@@ -1,9 +1,9 @@
 .PHONY: all clean fclean re me
 CC		=	c++
 FLAG	=	-std=c++98 -Wall -Wextra -Werror
-NAME 	=	Moar
-SRCS 	=	main.cpp Zombie.cpp zombieHorde.cpp
-HEADER	=	Zombie.hpp
+NAME 	=	fixedPoint
+SRCS 	=	main.cpp Fixed.cpp
+HEADER	=	Fixed.hpp
 OPT		=	-o
 DEL		=	rm -rf
 OBJS	=	$(SRCS:.cpp=.o)

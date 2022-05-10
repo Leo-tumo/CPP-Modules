@@ -8,6 +8,11 @@
 
 #ifndef EX00_FIXED_HPP
 #define EX00_FIXED_HPP
+# define WHITE "\033[0m"
+# define RED "\033[1;31m"
+# define CYAN "\033[1;36m"
+# define GREEN "\033[1;92m"
+# define MAGENTA "\033[1;35m"
 
 class Fixed
 {

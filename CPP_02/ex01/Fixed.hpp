@@ -7,15 +7,20 @@
 // ********************************************************************** //
 
 #ifndef EX01_FIXED_HPP
-#define EX01_FIXED_HPP
-
-#include <iostream>
+# define EX01_FIXED_HPP
+# include <iostream>
+# define WHITE "\033[0m"
+# define RED "\033[1;31m"
+# define CYAN "\033[1;36m"
+# define GREEN "\033[1;92m"
+# define MAGENTA "\033[1;35m"
 
 class Fixed
 {
 private:
     static const int    fractionalBits = 8;
     int                 _value;
+	
 public:
     Fixed();
 
