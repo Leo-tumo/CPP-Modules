@@ -1,0 +1,29 @@
+// ********************************************************************** //
+//                                                                        //
+//             ScavTrap.hpp                                               //
+//             Created: 2022/05/10 21:04:24 by leo                        //
+//             Made by: leo <leonidas.xaralambos@gmail.com>               //
+//                                                                        //
+// ********************************************************************** //
+
+#ifndef EX03_SCAVTRAP_HPP
+#define EX03_SCAVTRAP_HPP
+#include "ClapTrap.hpp"
+# define MG "\033[1;35m"
+
+class ScavTrap: virtual public ClapTrap
+{
+protected:
+    ScavTrap();
+	int	_energyPoints;
+public:
+    ScavTrap(std::string const & name);
+    ScavTrap( const ScavTrap & src );
+    ScavTrap & operator = (const ScavTrap &src);
+
+    ~ScavTrap();
+    void	attack(std::string const & target);
+    void	guardGate();
+};
+
+#endif //EX02_SCAVTRAP_HPP
