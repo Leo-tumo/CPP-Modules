@@ -11,7 +11,7 @@
 ## `Module 04`
   - ![letumany's 42 CPP Module 04 Score](https://badge42.vercel.app/api/v2/cl1l8hert000609l6rjl6rx6o/project/2586573)
 ## `Module 05`
-  - 
+  - ![letumany's 42 CPP Module 05 Score](https://badge42.vercel.app/api/v2/cl1l8hert000609l6rjl6rx6o/project/2589692)
 ## `Module 06`
   - 
 ## `Module 07`
