@@ -6,7 +6,7 @@
 //                                                                        //
 // ********************************************************************** //
 
-#include "../include/Scalar.hpp"
+#include "../include/Convert.hpp"
 
 int main(int ac, char *av[])
 {
@@ -15,9 +15,9 @@ int main(int ac, char *av[])
         std::cerr << "required one argument" << std::endl;
         return (1);
     }
-    Scalar scalar(av[1]);
+    Convert Convert(av[1]);
 
-    std::cout << scalar;
+    std::cout << Convert;
     return (0);
 }
 

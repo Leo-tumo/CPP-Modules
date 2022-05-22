@@ -8,7 +8,7 @@
 
 #include "../include/Serialization.hpp"
 
-int main(void)
+int main()
 {
 	Data leo;
 
@@ -21,4 +21,7 @@ int main(void)
 
 	std::cout << "Name: " << data->name << std::endl;
 	std::cout << "Info: " << data->info << std::endl;
+
+    std::cout << "\nFinally let's compare their memory addresses" << std::endl
+    << "\t\t" << &leo << "\n\t\t" << data << std::endl;
 }

@@ -1,32 +1,32 @@
 // ********************************************************************** //
 //                                                                        //
-//             Scalar.cpp                                                 //
+//             Convert.cpp                                                //
 //             Created: 2022/05/22 12:07:44 by leo                        //
 //             Made by: leo <leonidas.xaralambos@gmail.com>               //
 //                                                                        //
 // ********************************************************************** //
 
-#include "../include/Scalar.hpp"
+#include "../include/Convert.hpp"
 #include <cmath>
 
-Scalar::Scalar(): _value("error"){}
+Convert::Convert(): _value("error"){}
 
-Scalar::Scalar(std::string const &value): _value(value) {}
+Convert::Convert(std::string const &value): _value(value) {}
 
-Scalar::Scalar(Scalar const & src): _value(src._value) {}
+Convert::Convert(Convert const & src): _value(src._value) {}
 
-Scalar &Scalar::operator=(Scalar const & src) {
+Convert &Convert::operator=(Convert const & src) {
     this->_value = src._value;
     return *this;
 }
 
-Scalar::~Scalar(){}
+Convert::~Convert(){}
 
-std::string const &Scalar::getValue() const {
+std::string const &Convert::getValue() const {
     return _value;
 }
 
-char Scalar::toChar() const
+char Convert::toChar() const
 {
     int n;
 
@@ -34,18 +34,18 @@ char Scalar::toChar() const
     {
         n = std::stoi(this->_value);
         if (n < 0 || n > 255)
-            throw Scalar::ImpossibleException();
+            throw Convert::ImpossibleException();
     }
     catch (...)
     {
-        throw Scalar::ImpossibleException();
+        throw Convert::ImpossibleException();
     }
     if (!isprint(n))
-        throw Scalar::NonDisplayableException();
+        throw Convert::NonDisplayableException();
     return (static_cast<char>(n));
 }
 
-int Scalar::toInt() const
+int Convert::toInt() const
 {
     int n;
 
@@ -55,12 +55,12 @@ int Scalar::toInt() const
     }
     catch (...)
     {
-        throw Scalar::ImpossibleException();
+        throw Convert::ImpossibleException();
     }
     return (n);
 }
 
-float Scalar::toFloat() const
+float Convert::toFloat() const
 {
     float f;
 
@@ -70,12 +70,12 @@ float Scalar::toFloat() const
     }
     catch (...)
     {
-        throw Scalar::ImpossibleException();
+        throw Convert::ImpossibleException();
     }
     return (f);
 }
 
-double Scalar::toDouble() const
+double Convert::toDouble() const
 {
     double d;
 
@@ -85,17 +85,17 @@ double Scalar::toDouble() const
     }
     catch (...)
     {
-        throw Scalar::ImpossibleException();
+        throw Convert::ImpossibleException();
     }
     return (d);
 }
 
-std::ostream &operator<<(std::ostream &os, const Scalar &scalar)
+std::ostream &operator<<(std::ostream &os, const Convert &Convert)
 {
     os << "char: ";
     try
     {
-        char c = scalar.toChar();
+        char c = Convert.toChar();
         os << "'" << c << "'" << std::endl;
     }
     catch (const std::exception &e)
@@ -106,7 +106,7 @@ std::ostream &operator<<(std::ostream &os, const Scalar &scalar)
     os << "int: ";
     try
     {
-        os << scalar.toInt() << std::endl;
+        os << Convert.toInt() << std::endl;
     }
     catch (const std::exception &e)
     {
@@ -116,7 +116,7 @@ std::ostream &operator<<(std::ostream &os, const Scalar &scalar)
     os << "float: ";
     try
     {
-        float f = scalar.toFloat();
+        float f = Convert.toFloat();
 
         if (std::isnan(f) && std::signbit(f))
             os << "-";
@@ -133,7 +133,7 @@ std::ostream &operator<<(std::ostream &os, const Scalar &scalar)
     os << "double: ";
     try
     {
-        double d = scalar.toDouble();
+        double d = Convert.toDouble();
 
         if (std::isnan(d) && std::signbit(d))
             os << "-";
@@ -149,8 +149,8 @@ std::ostream &operator<<(std::ostream &os, const Scalar &scalar)
     return (os);
 }
 
-const char *Scalar::ImpossibleException::what() const throw(){return "impossible";}
+const char *Convert::ImpossibleException::what() const throw(){return "impossible";}
 
-const char *Scalar::NonDisplayableException::what() const throw(){return "Non displayable";}
+const char *Convert::NonDisplayableException::what() const throw(){return "Non displayable";}
 
 
