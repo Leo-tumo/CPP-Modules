@@ -10,7 +10,7 @@
 #define EX01_ITER_HPP
 
 template <typename T>
-void iter(T array[], int len, void (*func) (T)){
+void iter(T array[], int len, void (*func) (const T&)){
     for (int i = 0; i < len; ++i)
         func(array[i]);
 }
